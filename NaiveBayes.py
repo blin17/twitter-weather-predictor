@@ -1,7 +1,7 @@
 import numpy as np
 from sklearn.datasets import load_svmlight_file 
 import math
-
+import preprocess as parser
 
 
 def load_probabilities(data):
@@ -15,7 +15,8 @@ def load_probabilities(data):
         sentence = datum[1].split(" ")
         for word in sentence:
             if word in words:
-                words[word] = [x + y for x, y in zip(words[word], datum[4:])]
+                for i in range(24):
+                    words[word][i] = float(words[word][i])+ float(datum[i+4])
             else:
                 words[word] = datum[4:]
             word_count += 1
@@ -87,11 +88,6 @@ def determine_weather(tweet,data):
             submission[i]= 0
         
     return submission
-sentences = []
-sentences=[["1","Jazz for a Rainy Afternoon:  {link}","oklahoma","Oklahoma","0","0","1","0","0","0.8","0","0.2","0","0","0","0","0","0","0","0","0","0","1","0","0","0","0","0"],[
-"2","RT: @mention: I love rainy days.","florida","Miami-Ft. Lauderdale","0","0","0","1","0","0.196","0","0.804","0","0","0","0","0","0","0","0","0","0","1","0","0","0","0","0"],[
-"3","Good Morning Chicago! Time to kick the Windy City in the nuts and head back West!","idaho","","0","0","0","0","1","0","0","1","0","0","0","0","0","0","0","1","0","0","0","0","0","0","0","0"],[
-"6","Preach lol! :) RT @mention: #alliwantis this type of weather all the time.. I live for beautiful days like this! #minneapolis","minnesota","Minneapolis-St. Paul","0","0","0","1","0","1","0","0","0","0","0","0","0","0","0","0.604","0","0.196","0","0","0","0.201","0","0"],[
-"9","@mention good morning sunshine","rhode island","Purgatory","0","0","0","0.403","0.597","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","0"],[
-"10","Rather be storm chasing.","district of columbia","Washington, DC","0","0","0.6","0","0.4","0","0","1","0","0","0","0","0","0","0","0","0","0","0","0","1","0","0","0"]]
-print determine_weather(sentences[5][1], sentences)
+    
+parser.preprocess("train.txt", "test.txt")
+print determine_weather("Jazz for a Rainy Afternoon:  {link}", parser.trainData)

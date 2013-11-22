@@ -57,8 +57,11 @@ def preprocess(train, test):
       for line in f1:
           line= line.lower()
           line= line.split('","')
-          dataSets[data] += line
-  print dataSets
+          for i,elem in enumerate(line):
+            if i==0: elem= elem.replace("\"", "")
+            if i==len(line)-1: elem= elem.replace("\n", "")
+            line[i]= elem.translate(None, string.punctuation)
+          dataSets[data] += [line]
       
 
 
@@ -76,7 +79,7 @@ def preprocess3(train, test):
             if i==0: elem= elem.replace("\"", "")
             if i==len(line)-1: elem= elem.replace("\n", "")
             line[i]= elem.translate(None, string.punctuation)
-          dataSets[data] += line
+          dataSets[data] += [line]
   print dataSets
 
   
