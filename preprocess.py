@@ -41,7 +41,7 @@ def preprocess(train,test):
               startInd= index+length
             currString += removePunctuation(elem[startInd:],len(line),i)
             line[i]= currString
-          dataSets[data] += line  
+          dataSets[data] += [line]  
           csv_file.writerow(line)
 
 def removePunctuation(str, lineLen, i):
@@ -60,7 +60,7 @@ def removePunctuation(str, lineLen, i):
 ##           line= line.lower()
 ##           for elem 
 ##           line= line.split('","')
-##           dataSets[data] += line
+##           dataSets[data] += [line]
 ##   print dataSets
       
 
@@ -79,7 +79,7 @@ def removePunctuation(str, lineLen, i):
 ##             if i==0: elem= elem.replace("\"", "")
 ##             if i==len(line)-1: elem= elem.replace("\n", "")
 ##             line[i]= elem.translate(None, string.punctuation)
-##           dataSets[data] += line
+##           dataSets[data] += [line]
 ##   print dataSets
   
 if __name__ == '__main__':
