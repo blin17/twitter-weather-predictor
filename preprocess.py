@@ -19,13 +19,20 @@ stopWords= []
 smileys= []
 
 
-#potential optimizations:
-#  -Don't put label numbers through preprocessing steps when not necessary (e.g. "0" doesn't need to be filtered for stopwords)
+#Features:
+#  -Processed files saved to "trainV2" and "testV2" files
+#  -Strings switch to lowercase and punctuation removed
+#  -Smileys are preserved (list of smileys read in from file)
+#  -Leading and trailing whitespace is removed, internal whitespace compressed into single spaces
+#  -Stopwords are filtered out of all strings (list of stopwords read in from file)
 
-#links turn into garbage after removing punctuation, e.g. "http://bit.ly/g6ZQzw"
-#we're and were will be treated identically when punctuation is removed!!
-#filter out stopwords
-#Deal with RT, @mention, #hashtags
+#Issues: 
+#  -links turn into garbage after removing punctuation, e.g. "http://bit.ly/g6ZQzw"
+#  -we're and were will be treated identically when punctuation is removed!!
+#  -Deal with RT, @mention, #hashtags
+
+#Potential optimizations:
+#  -Don't put label numbers through preprocessing steps when not necessary (e.g. "0" doesn't need to be filtered for stopwords)
 
 #Used to parse smileys.txt and stopwords.txt files into "smileys" and "stopwords" lists
 def parseWordList(wordsFile):
