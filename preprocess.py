@@ -18,6 +18,10 @@ dataSets= {"train": trainData, "test": testData}
 stopWords= []
 smileys= []
 
+
+#potential optimizations:
+#  -Don't put label numbers through preprocessing steps when not necessary (e.g. "0" doesn't need to be filtered for stopwords)
+
 #links turn into garbage after removing punctuation, e.g. "http://bit.ly/g6ZQzw"
 #we're and were will be treated identically when punctuation is removed!!
 #filter out stopwords
