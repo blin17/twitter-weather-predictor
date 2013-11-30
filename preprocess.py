@@ -82,7 +82,7 @@ def preprocess(train,test):
 def removePunctuation(str, lineLen, i):
   if i==0: str= str.replace("\"", "")
   if i==lineLen-1: str= str.translate(None,'\"')
-  if i<=4: str= str.translate(None, string.punctuation).lower() 
+  if i<=3: str= str.translate(None, string.punctuation).lower() 
   return re.sub("\s+"," ",str.strip())
 
 
