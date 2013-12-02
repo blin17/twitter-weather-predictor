@@ -72,5 +72,5 @@ if __name__ == '__main__':
 	#print labelWords
 	#print labelCounts
 	print "Running time:", time.time()-start
-	c= classify("even rains sun shine weather")
+	c= classify("even if rains and sun wont shine whatever weather youll be mine")
 	print unbinarize(c)
