@@ -70,20 +70,20 @@ def preprocess(train,test):
             #Remove stopwords in string
             firstWord= currString[:currString.find(" ")]
             lastWord= currString[currString.rfind(" ")+1:]
-            if firstWord in stopwords: currString= currString[currString.find(" ")+1:]
+            if firstWord in stopwords: currString= currString[currString.find(" "):]
             if lastWord in stopwords: currString= currString[:currString.rfind(" ")]
             for stop in stopwords:
               currString= currString.replace(" "+stop+" ", " ")
-            line[i]= currString
+            line[i]= currString.strip()
           dataSets[data] += [line]  
           csv_file.writerow(line)
           #print "Done with one line", time.time()-st
 
 def removePunctuation(str, lineLen, i):
-  if i==0: str= str.replace("\"", "")
-  if i==lineLen-1: str= str.translate(None,'\"')
+  if i==0: str= str.replace("\"", "").lower()
+  if i==lineLen-1: str= str.translate(None,'\"').lower()
   if i<=3: str= str.translate(None, string.punctuation).lower() 
-  return re.sub("\s+"," ",str.strip())
+  return re.sub("\s+"," ",str.lower().strip())
 
 
   
@@ -92,7 +92,7 @@ if __name__ == '__main__':
   startTime= time.time()
   print "Start time:", startTime
   print "Parsing stopwords.txt and smileys.txt..."
-  stopwords= parseWordList("stopwords.txt")
+  stopwords= parseWordList("stopwords_unigram.txt")
   smileys= parseWordList("smileys.txt")
   print stopwords
   print smileys
@@ -100,6 +100,6 @@ if __name__ == '__main__':
   preprocess(sys.argv[1],sys.argv[2])
   stopTime= time.time()
   print "Stop time:", stopTime, "   Duration:", stopTime-startTime
-  print trainData[3]
-  print testData[3]
+  #print trainData[3]
+  #print testData[3]
 
