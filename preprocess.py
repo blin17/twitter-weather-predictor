@@ -1,5 +1,3 @@
-#Problem 2
-
 import string
 import sys
 import csv
@@ -7,6 +5,7 @@ import random
 import math
 import re
 import sets
+import time
 
 trainName= "trainV2"
 testName= "testV2"
@@ -16,78 +15,91 @@ trainData= []
 testData= []
 dataSets= {"train": trainData, "test": testData}
 
-smileys= [":)",":(",":-)",":-(", ":D"]
-
-#Keep smileys in the tweets! (eliminating punctuation gets rid of them!)
-
-## def preprocess2(train,test):
-##   inputFile= {"train": train, "test":test}
-##   global trainData, testData, dataSets
-##   for k,data in enumerate(["train","test"]):
-##     csv_file= csv.writer(open(filenames[data], "wb"))
-##     with open(inputFile[data]) as f1: 
-##       for j,line in enumerate(f1):
-##         if len(line)>1:
-##           line= line.lower()
-##           line= line.split('","')
-##           ret= []
-##           smileSet= sets.Set()
-##           for i,elem in enumerate(line):
-##             For smile in smileys:
-##               inds= [(m.start(), len(smile)) for m in re.finditer(re.compile(re.escape(smile)), ":)  :)   :)")]
-##               smileSet= smileSet.union(sets.Set(inds))
-##             smileSet= sorted(list(smileSet))
-##             print smileSet
-##             currString= ""
-##             startInd= 0
-##             for (index, length) in smileSet:
-##               currString += removePunctuation(elem[startInd:index],i)
-              
-
-##             line[i]= elem.translate(None, string.punctuation)
-##           dataSets[data] += line  
-##           csv_file.writerow(line)
+stopWords= []
+smileys= []
 
 
-def preprocess(train, test):
-  global trainData, testData, dataSets
-  inputFile= {"train": train, "test":test}
-  for k,data in enumerate(["train","test"]):
-    with open(inputFile[data]) as f1: 
-      for line in f1:
-          line= line.lower()
-          line= line.split('","')
-          for i,elem in enumerate(line):
-            if i==0: elem= elem.replace("\"", "")
-            if i==len(line)-1: elem= elem.replace("\n", "")
-            line[i]= elem.translate(None, string.punctuation)
-          dataSets[data] += [line]
-      
+#Features:
+#  -Processed files saved to "trainV2" and "testV2" files
+#  -Strings switch to lowercase and punctuation removed
+#  -Smileys are preserved (list of smileys read in from file)
+#  -Leading and trailing whitespace is removed, internal whitespace compressed into single spaces
+#  -Stopwords are filtered out of all strings (list of stopwords read in from file)
+
+#Issues: 
+#  -links turn into garbage after removing punctuation, e.g. "http://bit.ly/g6ZQzw"
+#  -we're and were will be treated identically when punctuation is removed!!
+#  -Deal with RT, @mention, #hashtags
+
+#Potential optimizations:
+#  -Don't put label numbers through preprocessing steps when not necessary (e.g. "0" doesn't need to be filtered for stopwords)
+
+#Used to parse smileys.txt and stopwords.txt files into "smileys" and "stopwords" lists
+def parseWordList(wordsFile):
+    ret= []
+    with open(wordsFile) as f: 
+      for line in f:
+        if len(line)>1:
+          ret += [line.strip().lower()]
+    return ret
 
 
-def preprocess3(train, test):
+def preprocess(train,test):
   inputFile= {"train": train, "test":test}
   global trainData, testData, dataSets
   for k,data in enumerate(["train","test"]):
     csv_file= csv.writer(open(filenames[data], "wb"))
-    with open(inputFile[data]) as f1: 
-      for j,line in enumerate(f1):
+    with open(inputFile[data]) as f: 
+      for j,line in enumerate(f):
         if len(line)>1:
-          line= line.lower()
+          st= time.time()
           line= line.split('","')
           for i,elem in enumerate(line):
-            if i==0: elem= elem.replace("\"", "")
-            if i==len(line)-1: elem= elem.replace("\n", "")
-            line[i]= elem.translate(None, string.punctuation)
-          dataSets[data] += [line]
-  print dataSets
+            #Recursively remove punctuation and make things lowercase between smileys
+            smileSet= sets.Set()
+            for smile in smileys:
+              inds= [(m.start(), len(smile), smile) for m in re.finditer(re.compile(re.escape(smile)), elem)]
+              smileSet= set(smileSet).union(sets.Set(inds))
+            smileSet= sorted(list(smileSet))
+            currString= ""
+            startInd= 0
+            for (index, length, smile) in smileSet:
+              currString += removePunctuation(elem[startInd:index],len(line),i) + " " + smile + " "
+              startInd= index+length
+            currString += removePunctuation(elem[startInd:],len(line),i)
+            #Remove stopwords in string
+            firstWord= currString[:currString.find(" ")]
+            lastWord= currString[currString.rfind(" ")+1:]
+            if firstWord in stopwords: currString= currString[currString.find(" "):]
+            if lastWord in stopwords: currString= currString[:currString.rfind(" ")]
+            for stop in stopwords:
+              currString= currString.replace(" "+stop+" ", " ")
+            line[i]= currString.strip()
+          dataSets[data] += [line]  
+          csv_file.writerow(line)
+          #print "Done with one line", time.time()-st
+
+def removePunctuation(str, lineLen, i):
+  if i==0: str= str.replace("\"", "").lower()
+  if i==lineLen-1: str= str.translate(None,'\"').lower()
+  if i<=3: str= str.translate(None, string.punctuation).lower() 
+  return re.sub("\s+"," ",str.lower().strip())
+
 
   
-def removePunctuation(str, i):
-  if i==0: elem= elem.replace("\"", "")
-  if i==len(line)-1: elem= elem.replace("\n", "")
-  return str.translate(None, string.punctuation)
-  
 if __name__ == '__main__':
-  print "Starting preprocess"
+  global stopwords, smileys
+  startTime= time.time()
+  print "Start time:", startTime
+  print "Parsing stopwords.txt and smileys.txt..."
+  stopwords= parseWordList("stopwords_unigram.txt")
+  smileys= parseWordList("smileys.txt")
+  print stopwords
+  print smileys
+  print "Preprocessing..."
   preprocess(sys.argv[1],sys.argv[2])
+  stopTime= time.time()
+  print "Stop time:", stopTime, "   Duration:", stopTime-startTime
+  #print trainData[3]
+  #print testData[3]
+
