@@ -1,7 +1,6 @@
 import numpy as np
 from sklearn.datasets import load_svmlight_file 
 import math
-import preprocess as parser
 
 processed = False
 words= {}
@@ -106,6 +105,14 @@ def determine_weather(tweet):
         
     return submission
     
-parser.preprocess("train.txt", "test.txt")
-for i in range(0,len(parser.testData)):
-    print str([parser.testData[i][0]]) + " "+ str(process_tweets([parser.testData[i][1]], parser.trainData))
+def readFile(filename):
+	data =[]
+	for line in open(filename):
+		words = line.split(",")
+		data.append(words)
+	return data 
+    
+train = readFile("trainV2")
+test = readFile("testV2")
+for i in range(0,len(test)):
+    print str(test[i][0]) + ", "+ str(process_tweets([test[i][1]], train))
