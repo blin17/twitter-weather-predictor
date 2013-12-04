@@ -44,10 +44,10 @@ def parseWordList(wordsFile):
     return ret
 
 
-def preprocess(train,test):
-  inputFile= {"train": train, "test":test}
+def preprocess(train):
+  inputFile= {"train": train}
   global trainData, testData, dataSets
-  for k,data in enumerate(["train","test"]):
+  for k,data in enumerate(["train"]):
     csv_file= csv.writer(open(filenames[data], "wb"))
     with open(inputFile[data]) as f: 
       for j,line in enumerate(f):
@@ -108,7 +108,7 @@ if __name__ == '__main__':
   print stopwords
   print smileys
   print "Preprocessing..."
-  preprocess(sys.argv[1],sys.argv[2])
+  preprocess(sys.argv[1])
   stopTime= time.time()
   print "Stop time:", stopTime, "   Duration:", stopTime-startTime
   #print trainData[3]
