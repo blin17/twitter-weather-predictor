@@ -31,7 +31,7 @@ def updateCounts(tweet, labels):
 def binarize(lst):
 	ret= []
 	for elem in lst:
-		ret += convert_to_binary(float(elem))
+		ret += convert_to_binary(float(elem.replace('\"','')))
 	return ret
 
 def unbinarize(lst): 
@@ -74,3 +74,4 @@ if __name__ == '__main__':
 	print "Running time:", time.time()-start
 	c= classify("even if rains and sun wont shine whatever weather youll be mine")
 	print unbinarize(c)
+	print len(vocabulary)

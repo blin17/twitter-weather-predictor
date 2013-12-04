@@ -8,7 +8,6 @@ import time
 
 
 #Decisions to make:
-#  -should non-US locations be ignored? Currently lumped into an "other" dictionary
 #  -How to determine which kinds of weather to choose? Probably want to determine a 
 #   threshold probability which, if exceeded, means that kind of weather is occuring.
 #   Currently just gets all indices with the max probability
