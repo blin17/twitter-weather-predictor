@@ -68,10 +68,21 @@ def preprocess(train,test):
               startInd= index+length
             currString += removePunctuation(elem[startInd:],len(line),i)
             #Remove stopwords in string
-            firstWord= currString[:currString.find(" ")]
-            lastWord= currString[currString.rfind(" ")+1:]
-            if firstWord in stopwords: currString= currString[currString.find(" "):]
-            if lastWord in stopwords: currString= currString[:currString.rfind(" ")]
+            stillStripping= True
+            first= False
+            last=False
+            while stillStripping:
+              firstWord= currString[:currString.find(" ")]
+              lastWord= currString[currString.rfind(" ")+1:]
+              if firstWord in stopwords: 
+                currString= currString[currString.find(" "):]
+                first= True
+              if lastWord in stopwords: 
+                currString= currString[:currString.rfind(" ")]
+                last= True
+              stillStripping= first or last
+              first= False
+              last= False
             for stop in stopwords:
               currString= currString.replace(" "+stop+" ", " ")
             line[i]= currString.strip()

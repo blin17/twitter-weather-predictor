@@ -1,4 +1,3 @@
-
 import sys
 import time
 import math
@@ -10,6 +9,7 @@ labelWords= [[{} for i in xrange(24)], [{} for i in xrange(24)]]
 numWordsPerLabel= [[0]*24, [0]*24]
 vocabulary= set([])
 importantWords= set([])
+mostImportantBreakdown= [[set([]) for i in xrange(24)],[set([]) for i in xrange(24)]]
 
 #Parameters to change:
 # -Methods for choosing which labels to increment for each label. 
@@ -60,6 +60,8 @@ def mostImportantWords(type):
 			inverse = [(value, key) for key, value in mapping.items()]
 			print heapq.nlargest(10, inverse)
 			importantWords.update([word for (count,word) in heapq.nlargest(200, inverse)])
+			mostImportantBreakdown[result][ind].update([word for (count,word) in heapq.nlargest(20, inverse)])
+
 
 if __name__ == '__main__':
 	#start= time.time()
@@ -67,7 +69,13 @@ if __name__ == '__main__':
 	#print labelWords[1][2]
 	#print labelCounts[1][2]
 	print mostImportantWords("sentiment")
+	print mostImportantWords("when")
+	print mostImportantWords("kind")
 	#print "Running time:", time.time()-start
 	#c= classify("even if rains and sun wont shine whatever weather youll be mine")
 	print len(vocabulary)
 	print importantWords
+	print "WOOOOOOO\n\n"
+	for i in range(24):
+		for j in [0,1]:
+			print "label:",str(i)+",  yes/no:",str(j)+",  important words:",mostImportantBreakdown[j][i]
