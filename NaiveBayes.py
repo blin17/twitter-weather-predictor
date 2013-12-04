@@ -1,8 +1,15 @@
 import numpy as np
 from sklearn.datasets import load_svmlight_file 
 import math
-import preprocess as parser
 
+processed = False
+words= {}
+word_count = 0
+num_data_points = 0
+sentiment = []
+time = []
+weather = []
+data = []
 
 def load_probabilities(data):
     sentiment = [0]*5
@@ -29,9 +36,20 @@ def load_probabilities(data):
     
     return (words, word_count, len(data), sentiment, time, weather)
     
+def process_tweets(tweets, data):
+    global words, word_count, num_data_points, sentiment, time, weather, g_data, processed
+    if not processed:
+        (words, word_count, num_data_points, sentiment, time, weather)= load_probabilities(data)
+        g_data = data
+        processed = True 
+    weather_submission=[]
+    for tweet in tweets:
+        weather_submission.append(determine_weather(tweet))
+    return weather_submission
 
-def determine_weather(tweet,data):
-    (words, word_count, num_data_points, sentiment, time, weather)= load_probabilities(data)
+
+def determine_weather(tweet):
+    global words, word_count, num_data_points, sentiment, time, weather
     submission = [0]*24
     for word in tweet.split(" "):
         if word in words:
@@ -79,8 +97,6 @@ def determine_weather(tweet,data):
         else:
             submission[i]= 0
     
-    
-    
     for i in range(9,24):
         if submission[i] == max_weather:
             submission[i]= 1
@@ -89,5 +105,14 @@ def determine_weather(tweet,data):
         
     return submission
     
-parser.preprocess("train.txt", "test.txt")
-print determine_weather("Jazz for a Rainy Afternoon:  {link}", parser.trainData)
+def readFile(filename):
+	data =[]
+	for line in open(filename):
+		words = line.split(",")
+		data.append(words)
+	return data 
+    
+train = readFile("trainV2")
+test = readFile("testV2")
+for i in range(0,len(test)):
+    print str(test[i][0]) + ", "+ str(process_tweets([test[i][1]], train))
