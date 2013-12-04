@@ -58,9 +58,9 @@ def mostImportantWords(type):
 		for ind in indexRange:
 			mapping= labelWords[result][ind]
 			inverse = [(value, key) for key, value in mapping.items()]
-			print heapq.nlargest(10, inverse)
-			importantWords.update([word for (count,word) in heapq.nlargest(200, inverse)])
-			mostImportantBreakdown[result][ind].update([word for (count,word) in heapq.nlargest(20, inverse)])
+			imp= [word for (count,word) in heapq.nlargest(200, inverse)]
+			importantWords.update(imp)
+			mostImportantBreakdown[result][ind].update(imp)
 
 
 if __name__ == '__main__':
@@ -68,14 +68,11 @@ if __name__ == '__main__':
 	parse(sys.argv[1])
 	#print labelWords[1][2]
 	#print labelCounts[1][2]
-	print mostImportantWords("sentiment")
-	print mostImportantWords("when")
-	print mostImportantWords("kind")
+	mostImportantWords("sentiment")
+	mostImportantWords("when")
+	mostImportantWords("kind")
 	#print "Running time:", time.time()-start
 	#c= classify("even if rains and sun wont shine whatever weather youll be mine")
-	print len(vocabulary)
-	print importantWords
-	print "WOOOOOOO\n\n"
 	for i in range(24):
 		for j in [0,1]:
-			print "label:",str(i)+",  yes/no:",str(j)+",  important words:",mostImportantBreakdown[j][i]
+			print "label:",str(i)+",  yes/no:",str(j)+",  important words:",list(mostImportantBreakdown[j][i])
