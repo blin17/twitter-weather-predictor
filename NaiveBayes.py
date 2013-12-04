@@ -114,5 +114,5 @@ def readFile(filename):
     
 train = readFile("trainV2")
 test = readFile("testV2")
-for i in range(0,len(test)):
-    print str(test[i][0]) + ", "+ str(process_tweets([test[i][1]], train))
+for i in range(0,len(train)):
+    print str(train[i][0]) + ", "+ str(process_tweets([train[i][1]], train))
