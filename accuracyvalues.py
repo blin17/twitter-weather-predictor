@@ -60,10 +60,9 @@ for k in range(len(allsubdata)):
 	total += 1
 
 
-print `[float(i) for i in trainvaluelist[4:9]]`
-print kind_dict[key]
-print kind
-
+#print `[float(i) for i in trainvaluelist[4:9]]`
+#print kind_dict[key]
+#print kind
 #print len(total_kind_correct)
 
 when_acc = (float(total_when_correct)/total)*100.0
