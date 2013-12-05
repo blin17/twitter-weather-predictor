@@ -68,7 +68,7 @@ def mostImportantWords(type):
 		for ind in indexRange:
 			mapping= labelWords[result][ind]
 			inverse = [(value, key) for key, value in mapping.items()]
-			imp= [word for (count,word) in heapq.nlargest(500, inverse)]
+			imp= [word for (count,word) in heapq.nlargest(100, inverse)]
 			importantWords += imp
 			mostImportantBreakdown[result][ind] += imp
 
