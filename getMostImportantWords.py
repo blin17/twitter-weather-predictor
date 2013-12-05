@@ -8,11 +8,17 @@ labelCounts= [[0]*24, [0]*24]
 labelWords= [[{} for i in xrange(24)], [{} for i in xrange(24)]]
 numWordsPerLabel= [[0]*24, [0]*24]
 vocabulary= set([])
-importantWords= set([])
-mostImportantBreakdown= [[set([]) for i in xrange(24)],[set([]) for i in xrange(24)]]
-sentimentWords= set([])
-whenWords= set([])
-kindWords= set([])
+#importantWords= set([])
+#mostImportantBreakdown= [[set([]) for i in xrange(24)],[set([]) for i in xrange(24)]]
+#sentimentWords= set([])
+#whenWords= set([])
+#kindWords= set([])
+importantWords= []
+mostImportantBreakdown= [[[] for i in xrange(24)],[[] for i in xrange(24)]]
+sentimentWords= []
+whenWords= []
+kindWords= []
+
 
 #Parameters to change:
 # -Methods for choosing which labels to increment for each label. 
@@ -54,6 +60,7 @@ def binarizeKind(kinds):
 	return binarizeSentiment(kinds)
 
 def mostImportantWords(type):
+	global importantWords
 	if type=="sentiment": indexRange= range(5)
 	elif type=="when": indexRange= range(5,9)
 	else: indexRange= range(9,24)
@@ -62,19 +69,20 @@ def mostImportantWords(type):
 			mapping= labelWords[result][ind]
 			inverse = [(value, key) for key, value in mapping.items()]
 			imp= [word for (count,word) in heapq.nlargest(500, inverse)]
-			importantWords.update(imp)
-			mostImportantBreakdown[result][ind].update(imp)
+			importantWords += imp
+			mostImportantBreakdown[result][ind] += imp
 
 def assignWordsForEachLabel():
+	global sentimentWords, whenWords, kindWords
 	for i in range(0,5):
 		for j in range(2):
-			sentimentWords.update(mostImportantBreakdown[j][i])
+			sentimentWords += mostImportantBreakdown[j][i]
 	for i in range(5,9):
 		for j in range(2):
-			whenWords.update(mostImportantBreakdown[j][i])
+			whenWords += mostImportantBreakdown[j][i]
 	for i in range(9,24):
 		for j in range(2):
-			kindWords.update(mostImportantBreakdown[j][i])			
+			kindWords += mostImportantBreakdown[j][i]
 
 
 
