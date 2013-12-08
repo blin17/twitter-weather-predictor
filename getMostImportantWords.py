@@ -109,7 +109,7 @@ def mostImportantWords():
 		if i!=8: file.close()
 
 """			
-def mostImportantWordsPerLabel(type):
+def mostImportantWords(type, k):
 	global importantWords
 	if type=="sentiment": indexRange= range(5)
 	elif type=="when": indexRange= range(5,9)
@@ -118,7 +118,7 @@ def mostImportantWordsPerLabel(type):
 		for ind in indexRange:
 			mapping= labelWords[result][ind]
 			inverse = [(value, key) for key, value in mapping.items()]
-			imp= [word for (count,word) in heapq.nlargest(500, inverse)]
+			imp= [word for (count,word) in heapq.nlargest(k, inverse)]
 			importantWords += imp
 			mostImportantBreakdown[result][ind] += imp
 """
@@ -139,10 +139,14 @@ def assignWordsForEachLabel():
 
 if __name__ == '__main__':
 	#start= time.time()
-	parse(sys.argv[1])
+	parse("trainV2")
+	#k = 40
 	#print labelWords[1][2]
 	#print labelCounts[1][2]
 	mostImportantWords()
+	#mostImportantWords("sentiment", k)
+	#mostImportantWords("when", k)
+	#mostImportantWords("kind", k)
 	#print "Running time:", time.time()-start
 	#c= classify("even if rains and sun wont shine whatever weather youll be mine")
 	#for i in range(24):
@@ -150,4 +154,5 @@ if __name__ == '__main__':
 	#		print "label:",str(i)+",  yes/no:",str(j)+",  important words:",list(mostImportantBreakdown[j][i])
 	#assignWordsForEachLabel()
 	#print list(kindWords)
+	assignWordsForEachLabel()
 
