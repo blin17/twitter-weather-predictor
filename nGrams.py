@@ -55,7 +55,8 @@ def updateCounts(tweet, labels):
 							if word in labelWords[i]: labelWords[i][word] += 1
 							else: labelWords[i][word]= 1
 				else:
-					index= ((i-9)*2)+label
+					index= ((i-9)*2)+9+label
+					#print index
 					labelCounts[index] += 1
 					numWordsPerLabel[index] += len(tweet)
 					for word in newWords:
@@ -76,7 +77,7 @@ def binarizeWhen(whens):
 def binarizeKind(kinds):
 	return [int(float(val.replace('\"','')) >= kindThresh) for val in kinds]
 	
-def classify(tweet):
+def classify(tweet, id):
 	global numExamples
 	ret= [0]*24
 	probs= [0]*39
@@ -99,30 +100,46 @@ def classify(tweet):
 			for label in range(39):
 				if word in labelWords[label]: count= labelWords[label][word]
 				else: count= 0
-				print "Count for",word,"is",count,"out of",labelCounts[label]
+				#print "Count for",word,"is",count,"out of",labelCounts[label]
 				#print len(vocabulary), numWordsPerLabel[label]
 				prior= 0.001
-				if float(labelCounts[label])/float(numExamples)
-				probs[label] += math.log(float(labelCounts[label])/float(numExamples))
+				if float(labelCounts[label])/float(numExamples) > 0: prior=float(labelCounts[label])/float(numExamples)
+				probs[label] += prior
 				probs[label] += math.log(float(1+count)/float(len(vocabulary)+numWordsPerLabel[label]))
-	print probs
+	#print probs
 
 	sentInd= random.choice([ind for ind,val in enumerate(probs[0:5]) if val==max(probs[0:5])])
 	whenInd= 5+random.choice([ind for ind,val in enumerate(probs[5:9]) if val==max(probs[5:9])])
 	kindInds= []
+	#print sentInd,whenInd,kindInds
 	for i in range(9,39,2):
 		if probs[i]<probs[i+1]: kindInds += [int(i-((i-9)/2))]
 	ret= [int(elem==sentInd or elem==whenInd or elem in kindInds) for elem in range(24)]
-	return ret
+
+	string= id+","
+	for k,num in enumerate(ret):
+		if k==len(ret)-1: string += str(num) + '\n'
+		else: string += str(num) + ","
+	return string
+
+
+def classifyAll(test,outFile):
+  out=open(outFile,'w')
+  with open(test) as f: 
+    for i,line in enumerate(f):
+      if len(line)>1:
+    	lst= line.split(',')
+    	out.write(classify(lst[1],lst[0]))
 
 
 if __name__ == '__main__':
-	start= time.time()
 	parse(sys.argv[1], sys.argv[2]) #arg1 is trainV2, arg2 is file containing grams and weights
 	#print labelWords
 	#print labelCounts
+	start= time.time()
+	classifyAll("/Users/nikhilnathwani/Desktop/testV2", "nikhilOutput.txt")
+	#classify("love rainy days")
+	#print c
 	print "Running time:", time.time()-start
-	c= classify("jazz rainy afternoon")
-	print c
 	#print unbinarize(c)
 	#print len(vocabulary)
