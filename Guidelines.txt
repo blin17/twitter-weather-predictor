@@ -1,0 +1,50 @@
+Generic Project Report Format
+
+Your report for the final project should NOT exceed 10 single-spaced pages using 11pt font with at least 1 inch margins, but can be shorter.
+
+Below are guidelines on how to write-up your final report for the project. Of course, for most projects only a subset of the comments below are relevant. However, you can use it as a general guide in structuring your final report.
+
+A "standard" experimental ML paper consists of the following sections: 
+
+1. Introduction
+
+Motivate and abstractly describe the problem you are addressing and how you are addressing it. What is the problem? Why is it important? What is your basic approach? A short discussion of how it fits into related work in the area is also desirable. Summarize the basic results and conclusions that you will present. 
+
+2. Problem Definition and Methods 
+
+2.1 Task Definition
+
+Precisely define the problem and the questions you are addressing. Elaborate on why this is an interesting and important problem. 
+
+2.2 Algorithms and Methods
+
+Describe in reasonable detail the algorithms and methods you are using to address this problem (e.g. briefly describe the machine learning methods you use). If you are drawing on related work, cite and explain how it relates to your work.
+
+3. Experimental (and/or Theoretical) Evaluation 
+
+3.1 Methodology
+
+What are the criteria you are using to evaluate and how did you establish statistical significance? How does this evaluation (e.g. experiment) relate to the questions you are trying to answer? Describe the experimental methodology that you used. What is the training/test data that was used, and why is it realistic or interesting? Exactly what performance data did you collect and how are you presenting and analyzing it? Comparisons to competing methods that address the same problem or to variations of your own algorithm are particularly useful. Give enough detail about your experiment setup so that others could reproduce the work.
+
+3.2 Results
+
+Present the quantitative results of your experiments. Graphical data presentation such as graphs and histograms are frequently better than tables. Explain the basic findings by explaining the results contained in the tables and graphs.
+
+3.3 Discussion
+
+How do the results answer your questions? What conclusions do the results support about the strengths and weaknesses of your method compared to other methods? How can the results be explained in terms of the underlying properties of the algorithm and/or the data. 
+
+4. Related Work
+
+Can you say anything about related work from your background readings? It may be possible to answer the following questions for each piece of related work that addresses the same or a similar problem. What is their problem and method? How is your problem and method different? Why is your problem and method better? 
+
+5. Future Work
+
+What are the major shortcomings of your current method? For each shortcoming, propose additions or enhancements that would help overcome it. 
+
+6. Conclusion 
+Briefly summarize the important results and conclusions presented in the paper. What are the most important points illustrated by your work? How will your results improve future research and applications in the area?
+
+APPENDIX:
+Source code of your systems submitted separately.
+ 
