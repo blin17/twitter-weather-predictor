@@ -116,7 +116,8 @@ def classify(tweet, id):
 		if probs[i]<probs[i+1]: kindInds += [int(i-((i-9)/2))]
 	ret= [int(elem==sentInd or elem==whenInd or elem in kindInds) for elem in range(24)]
 
-	string= id+","
+	#string= id+"," <- for accuracy.py
+	string= ""
 	for k,num in enumerate(ret):
 		if k==len(ret)-1: string += str(num) + '\n'
 		else: string += str(num) + ","
@@ -137,7 +138,7 @@ if __name__ == '__main__':
 	#print labelWords
 	#print labelCounts
 	start= time.time()
-	classifyAll("/Users/nikhilnathwani/Desktop/testV2", "nikhilOutput.txt")
+	classifyAll("/Users/nikhilnathwani/Desktop/trainingSetTweetsV2", "nikhilOutput2.txt")
 	#classify("love rainy days")
 	#print c
 	print "Running time:", time.time()-start
