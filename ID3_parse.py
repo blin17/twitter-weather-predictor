@@ -1,38 +1,53 @@
 #This file parses the pictures of in the test/train files into Pic objects
 import string
 import sys
-import decide
 import tree
 import math
+import decide
 import time
+import random
+import numpy as np
 
 #label->index: 0->0, 1->1, 2->2, 4->3
 typeMats= [[0,0,0,0,0],[0,0,0,0],[0],[0],[0],[0],[0],[0],[0],[0],[0],[0],[0],[0],[0],[0],[0]]
 labelMats= typeMats[0]
 testSet= []
+featureHash= {}
 
 
 def loadWordFeatures(filename):   
   with open(filename) as f: 
     for line in f:
       if len(line)>1:
-        lst=line.split(',')
-        print lst
-
-
-def parser(filename):
-  with open(filename) as f: 
-    for line in f:
-      if len(line)>1:
-        ind= string.find(line, ' ')
-        label= int(line[:ind])
-        if label==4:
-          label= 3
-        lst= line[(ind+1):].split(" ")
-        vals= [0]*2000
+        lst=[elem.strip().replace('\'','') for elem in line.split(',')]
+        count= 0
         for elem in lst:
-          ind= string.find(elem, ':')
-          vals[int(elem[:ind])]= int(elem[(ind+1):])
+          featureHash[elem]= count
+          count += 1
+
+        print featureHash
+
+
+def parser(filename, type):
+  fv= open("featureVectors.txt", 'a')
+  with open(filename) as f: 
+    for i,line in enumerate(f):
+      if len(line)>1:
+        print "Parsing line", i
+        lst= line.split(',')
+        tweet= lst[0]
+        sentiment= [float(elem.replace('\"','')) for elem in lst[4:9]]
+        label= random.choice([ind for ind,val in enumerate(sentiment) if val==max(sentiment)])
+        vals= [0]*len(featureHash)
+        tweet= tweet.split(' ')
+        for word in tweet:
+          if word in featureHash:
+            vals[featureHash[word]] += 1
+        string=lst[0]+","
+        for j,elem in enumerate(vals):
+          if j==len(vals): string+=str(elem)
+          else: string+= str(elem)+','
+        fv.write(string)
         if isinstance(labelMats[label],int):
           labelMats[label]= np.array(vals)
         else: labelMats[label]= np.vstack((labelMats[label],np.array(vals)))
@@ -116,4 +131,10 @@ def mcnemar(vec1, vec2):
   return (len(pospos),len(posneg),len(negpos),len(negneg))
 
 if __name__ == '__main__':
-  loadWordFeatures("sentimentWords")
+  loadWordFeatures("sentimentWords.txt")
+  parser("trainV2", 0)
+  start= time.time()
+  print "about to go into ID3 method"
+  #dt2Level= decide.ID3(labelMats,range(len(featureHash)),0,1,2,[0])
+  #print dt2Level
+  print time.time()-start

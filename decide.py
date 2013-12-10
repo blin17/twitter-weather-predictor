@@ -90,6 +90,7 @@ def printLevels(self):
 #threshes is the set of allowable threshold values
 def ID3(S, Attr, i, isEarlyStop, earlyStopDepth, threshes):
     labelSetSizes= [elem.shape[0] for elem in S]
+    print "IN ID3"
     
     #if no training examples took this branch, turn it into a leaf with randomly-selected label
     if sum(labelSetSizes)==0:

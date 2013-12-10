@@ -2,7 +2,7 @@
 # File accuracyvalues.py
 ###################################################
 
-infile1 = open('train_submission.txt', 'r')
+infile1 = open('nikhilOutput.txt', 'r')
 submissionline1 = infile1.readline().strip()
 allsubdata = [line.strip() for line in infile1]
 
