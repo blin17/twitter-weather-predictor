@@ -7,7 +7,7 @@ import re
 import sets
 import time
 
-trainName= "trainV2"
+trainName= "../../../trainV2"
 testName= "testV2"
 filenames= {"train": trainName, "test":testName}
 
@@ -53,42 +53,47 @@ def preprocess(train):
       for j,line in enumerate(f):
         if len(line)>1:
           st= time.time()
-          line= line.split('","')
-          for i,elem in enumerate(line):
-            #Recursively remove punctuation and make things lowercase between smileys
-            smileSet= sets.Set()
-            for smile in smileys:
-              inds= [(m.start(), len(smile), smile) for m in re.finditer(re.compile(re.escape(smile)), elem)]
-              smileSet= set(smileSet).union(sets.Set(inds))
-            smileSet= sorted(list(smileSet))
-            currString= ""
-            startInd= 0
-            for (index, length, smile) in smileSet:
-              currString += removePunctuation(elem[startInd:index],len(line),i) + " " + smile + " "
-              startInd= index+length
-            currString += removePunctuation(elem[startInd:],len(line),i)
-            #Remove stopwords in string
-            stillStripping= True
+          line= line[:-1].split(',')
+          tweet= ""
+          for k,entry in enumerate(line):
+            if k>=2: tweet += str(entry) + " "
+          line= [line[0], line[1], tweet]
+          #for i,elem in enumerate(line):
+          elem= line[2]
+          #Recursively remove punctuation and make things lowercase between smileys
+          smileSet= sets.Set()
+          for smile in smileys:
+            inds= [(m.start(), len(smile), smile) for m in re.finditer(re.compile(re.escape(smile)), elem)]
+            smileSet= set(smileSet).union(sets.Set(inds))
+          smileSet= sorted(list(smileSet))
+          currString= ""
+          startInd= 0
+          for (index, length, smile) in smileSet:
+            currString += removePunctuation(elem[startInd:index],len(line),1) + " " + smile + " "
+            startInd= index+length
+          currString += removePunctuation(elem[startInd:],len(line),1)
+          #Remove stopwords in string
+          stillStripping= True
+          first= False
+          last=False
+          while stillStripping:
+            firstWord= currString[:currString.find(" ")]
+            lastWord= currString[currString.rfind(" ")+1:]
+            if firstWord in stopwords: 
+              currString= currString[currString.find(" "):]
+              first= True
+            if lastWord in stopwords: 
+              currString= currString[:currString.rfind(" ")]
+              last= True
+            stillStripping= first or last
             first= False
-            last=False
-            while stillStripping:
-              firstWord= currString[:currString.find(" ")]
-              lastWord= currString[currString.rfind(" ")+1:]
-              if firstWord in stopwords: 
-                currString= currString[currString.find(" "):]
-                first= True
-              if lastWord in stopwords: 
-                currString= currString[:currString.rfind(" ")]
-                last= True
-              stillStripping= first or last
-              first= False
-              last= False
-            for stop in stopwords:
-              currString= currString.replace(" "+stop+" ", " ")
-            line[i]= currString.strip()
-          dataSets[data] += [line]  
-          csv_file.writerow(line)
-          #print "Done with one line", time.time()-st
+            last= False
+          for stop in stopwords:
+            currString= currString.replace(" "+stop+" ", " ")
+          line[2]= currString.strip()
+        dataSets[data] += [line]  
+        csv_file.writerow(line)
+        #print "Done with one line", time.time()-st
 
 def removePunctuation(str, lineLen, i):
   if i==0: str= str.replace("\"", "").lower()
@@ -103,8 +108,8 @@ if __name__ == '__main__':
   startTime= time.time()
   print "Start time:", startTime
   print "Parsing stopwords.txt and smileys.txt..."
-  stopwords= parseWordList("stopwords_unigram.txt")
-  smileys= parseWordList("smileys.txt")
+  stopwords= parseWordList("data/nikhil_words/stopwords_unigram.txt")
+  smileys= parseWordList("data/nikhil_words/smileys.txt")
   print stopwords
   print smileys
   print "Preprocessing..."
