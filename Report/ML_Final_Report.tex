@@ -1,0 +1,42 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{fullpage}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem*{remark}{Remark}
+\renewcommand{\thesubsection}{(\alph{subsection})}
+
+       % define the title
+       \author{Aparna Pande (netid), Brennan Chu (netid), Brian Lin (netid), Nikhil Nathwani (njn27)}
+       \title{TITLE}
+       \begin{document}
+       % generates the title
+       \maketitle
+
+\section{Introduction}
+\input{Introduction}
+
+\section{Data}
+\input{Data}
+
+
+\section{Preliminary Learning Methods}
+\input{Decision_Trees}
+\input{SVM}
+\input{NaiveBayes}
+\input{AlgoComparison}
+
+\section{Advanced Learning Methods}
+\input{MRF}
+
+
+\section{Conclusion}
+\input{Conclusion}
+
+\end{document}
