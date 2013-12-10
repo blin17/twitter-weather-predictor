@@ -32,9 +32,11 @@ def compareLists(trainlst, sublst):
 
 def compareKinds(trainlst, sublst):
 	for i in range(len(trainlst)):
-		if trainlst[i] == sublst[i]:
+		if (sublst[i] == 1.0) and (trainlst[i] > 0.7):
 			total_kind_correct[i] += 1
 			#print `total_kind_correct`
+		elif (sublst[i] == 0.0) and (trainlst[i] <= 0.2):
+			total_kind_correct[i] += 1
 
 
 for k in range(len(alltraindata)):
@@ -51,19 +53,14 @@ for k in range(len(allsubdata)):
 	when = subvaluelist[6:10]
 	kind = subvaluelist[10:]
 	if (key in when_dict):
-		#print when_dict[key], when
 		total_when_correct += compareLists(when_dict[key], when)
 		total_sent_correct += compareLists(sent_dict[key], sent)
 		compareKinds(kind_dict[key], kind)
+		#print kind_dict[key], kind
 	else: 
 		print "key not in training dictionaries"
 	total += 1
 
-
-#print `[float(i) for i in trainvaluelist[4:9]]`
-#print kind_dict[key]
-#print kind
-#print len(total_kind_correct)
 
 when_acc = (float(total_when_correct)/total)*100.0
 print "Total when correct is ",`total_when_correct`, "Accuracy of \"when\" label is: ",`when_acc`
@@ -76,6 +73,8 @@ print "Kind accuracies", `kind_acc`
 
 total_kind_acc = sum(kind_acc)/len(kind_acc)
 print "Average kind accuracy is ", `total_kind_acc`
+
+print kind_dict['11']
 
 
 
