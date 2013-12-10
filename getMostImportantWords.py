@@ -74,11 +74,11 @@ def binarizeKind(kinds):
 def mostImportantWords():
 	files= [[] for i in xrange(17)]
 	global importantWords
-	files[0]= open('Important_Word_Output/sentimentWords', 'w+')
-	files[1]= open('Important_Word_Output/whenWords', 'w+')
+	files[0]= open('Important_Words_For_MRF/sentimentWords', 'w+')
+	files[1]= open('Important_Words_For_MRF/whenWords', 'w+')
 	for i in range(15):
 		if i != 6:
-			string= 'Important_Word_Output/kindWords'+str(i+1)
+			string= 'Important_Words_For_MRF/kindWords'+str(i+1)
 			files[i+2]= open(string, 'w+')
 	a= labelWords[1]
 	b= labelWords[2]
@@ -91,7 +91,7 @@ def mostImportantWords():
 			if ind!=15:
 				mapping= labelWords[ind]
 				inverse = [(float(value)/float(numTweetsWithEachWord[key]), key) for key, value in mapping.items() if numTweetsWithEachWord[key]>15]
-				imp= [word for (count,word) in heapq.nlargest(500, inverse)]
+				imp= [word for (count,word) in heapq.nlargest(10, inverse)]
 				importantWords += imp
 				if j==0: sentimentWords.update(imp)
 				elif j==1: whenWords.update(imp)
@@ -154,5 +154,5 @@ if __name__ == '__main__':
 	#		print "label:",str(i)+",  yes/no:",str(j)+",  important words:",list(mostImportantBreakdown[j][i])
 	#assignWordsForEachLabel()
 	#print list(kindWords)
-	assignWordsForEachLabel()
+	#assignWordsForEachLabel()
 
