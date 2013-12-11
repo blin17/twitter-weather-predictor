@@ -77,7 +77,7 @@ def binarizeWhen(whens):
 def binarizeKind(kinds):
 	return [int(float(val.replace('\"','')) >= kindThresh) for val in kinds]
 	
-def classify(tweet, id):
+def classify(tweet, state, time):
 	global numExamples
 	ret= [0]*24
 	probs= [0]*39
@@ -114,10 +114,11 @@ def classify(tweet, id):
 	#print sentInd,whenInd,kindInds
 	for i in range(9,39,2):
 		if probs[i]<probs[i+1]: kindInds += [int(i-((i-9)/2))]
+	print probs
 	ret= [int(elem==sentInd or elem==whenInd or elem in kindInds) for elem in range(24)]
 
-	#string= id+"," <- for accuracy.py
-	string= ""
+	#string= id+"," #<- for accuracy.py
+	string= state+","+time+","
 	for k,num in enumerate(ret):
 		if k==len(ret)-1: string += str(num) + '\n'
 		else: string += str(num) + ","
@@ -130,7 +131,7 @@ def classifyAll(test,outFile):
     for i,line in enumerate(f):
       if len(line)>1:
     	lst= line.split(',')
-    	out.write(classify(lst[1],lst[0]))
+    	out.write(classify(lst[2],lst[0],lst[1]))
 
 
 if __name__ == '__main__':
@@ -138,7 +139,8 @@ if __name__ == '__main__':
 	#print labelWords
 	#print labelCounts
 	start= time.time()
-	classifyAll("/Users/nikhilnathwani/Desktop/trainingSetTweetsV2", "nikhilOutput2.txt")
+	classify("90 degrees 100 humidity feel crowded bus brooklyn 50 sweaty crewguys", "CA", "2009-06-19 03:49:06")
+	#classifyAll("/Users/nikhilnathwani/Desktop/MRF_Train", "nikhilOutput2.txt")
 	#classify("love rainy days")
 	#print c
 	print "Running time:", time.time()-start
