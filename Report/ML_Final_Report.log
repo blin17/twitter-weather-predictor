@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  9 DEC 2013 20:43
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  11 DEC 2013 19:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -393,18 +393,18 @@ File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
  (./ML_Final_Report.aux)
 \openout1 = `ML_Final_Report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
 
 (/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -468,43 +468,174 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+msa on input line 20.
+LaTeX Font Info:    Try loading font information for U+msa on input line 18.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 20.
+LaTeX Font Info:    Try loading font information for U+msb on input line 18.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-Overfull \hbox (16.27739pt too wide) in paragraph at lines 20--20
- [][] 
- []
 
-(./Introduction.tex) (./Data.tex) (./Decision_Trees.tex) (./SVM.tex)
-(./NaiveBayes.tex) (./AlgoComparison.tex) (./MRF.tex) (./Conclusion.tex)
-[1
+LaTeX Warning: No \author given.
+
+(./Introduction.tex
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+) (./ProblemDef.tex
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 5.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 5.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ [1
 
 {/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./ML_Final_Report.aux) ) 
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no Ø in font cmr10!
+) (./Data.tex [2]
+<wordclouds/31sentiment.png, id=18, 1251.67625pt x 615.29875pt>
+File: wordclouds/31sentiment.png Graphic file (type png)
+
+<use wordclouds/31sentiment.png>
+Package pdftex.def Info: wordclouds/31sentiment.png used on input line 15.
+(pdftex.def)             Requested size: 226.48395pt x 111.33109pt.
+
+<wordclouds/31when.png, id=19, 1252.68pt x 617.30624pt>
+File: wordclouds/31when.png Graphic file (type png)
+
+<use wordclouds/31when.png>
+Package pdftex.def Info: wordclouds/31when.png used on input line 19.
+(pdftex.def)             Requested size: 226.48395pt x 111.60013pt.
+
+<wordclouds/50kindwords.png, id=20, 1278.7775pt x 637.38126pt>
+File: wordclouds/50kindwords.png Graphic file (type png)
+
+<use wordclouds/50kindwords.png>
+Package pdftex.def Info: wordclouds/50kindwords.png used on input line 26.
+(pdftex.def)             Requested size: 226.48395pt x 112.88553pt.
+ [3 <./wordclouds/31sentiment.png> <./wordclouds/31when.png> <./wordclouds/50ki
+ndwords.png>]) (./Decision_Trees.tex
+Missing character: There is no √ in font cmr10!
+Missing character: There is no Ø in font cmr10!
+)
+(./SVM.tex) (./NaiveBayes.tex) (./AdvancedMethods.tex [4]) [5] (./Results.tex
+<results/svmWhen.png, id=37, 444.7014pt x 345.9324pt>
+File: results/svmWhen.png Graphic file (type png)
+
+<use results/svmWhen.png>
+Package pdftex.def Info: results/svmWhen.png used on input line 5.
+(pdftex.def)             Requested size: 203.83417pt x 158.56602pt.
+File: results/svmWhen.png Graphic file (type png)
+ <use results/svmWhen.png>
+Package pdftex.def Info: results/svmWhen.png used on input line 9.
+(pdftex.def)             Requested size: 203.83417pt x 158.56602pt.
+File: results/svmWhen.png Graphic file (type png)
+ <use results/svmWhen.png>
+Package pdftex.def Info: results/svmWhen.png used on input line 16.
+(pdftex.def)             Requested size: 203.83417pt x 158.56602pt.
+
+<results/svmCValue.png, id=39, 489.9906pt x 361.8318pt>
+File: results/svmCValue.png Graphic file (type png)
+
+<use results/svmCValue.png>
+Package pdftex.def Info: results/svmCValue.png used on input line 25.
+(pdftex.def)             Requested size: 339.72592pt x 250.87885pt.
+
+<results/bayes.png, id=40, 989.6172pt x 402.7848pt>
+File: results/bayes.png Graphic file (type png)
+ <use results/bayes.png>
+Package pdftex.def Info: results/bayes.png used on input line 34.
+(pdftex.def)             Requested size: 339.72592pt x 138.27255pt.
+
+<results/decision.png, id=41, 453.8556pt x 380.1402pt>
+File: results/decision.png Graphic file (type png)
+
+<use results/decision.png>
+Package pdftex.def Info: results/decision.png used on input line 44.
+(pdftex.def)             Requested size: 339.72592pt x 284.55339pt.
+
+<results/comparison.png, id=42, 684.156pt x 466.3824pt>
+File: results/comparison.png Graphic file (type png)
+
+<use results/comparison.png>
+Package pdftex.def Info: results/comparison.png used on input line 53.
+(pdftex.def)             Requested size: 339.72592pt x 231.59654pt.
+) (./Discussion.tex) (./RelatedWork.tex [6 <./results/svmWhen.png>] [7 <./resul
+ts/svmCValue.png> <./results/bayes.png>]) [8 <./results/decision.png> <./result
+s/comparison.png>] (./FutureWork.tex)
+(./Conclusion.tex <results/heatmap.png, id=58, 738.1176pt x 496.254pt>
+File: results/heatmap.png Graphic file (type png)
+
+<use results/heatmap.png>
+Package pdftex.def Info: results/heatmap.png used on input line 11.
+(pdftex.def)             Requested size: 339.72592pt x 228.40833pt.
+) (./Appendix.tex) (./Conclusion.tex
+File: results/heatmap.png Graphic file (type png)
+
+<use results/heatmap.png>
+Package pdftex.def Info: results/heatmap.png used on input line 11.
+(pdftex.def)             Requested size: 339.72592pt x 228.40833pt.
+) [9 <./results/heatmap.png>] [10]
+(./ML_Final_Report.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 10431 strings out of 493488
- 199967 string characters out of 3141326
- 236037 words of memory out of 3000000
- 13490 multiletter control sequences out of 15000+200000
- 9489 words of font info for 36 fonts, out of 3000000 for 9000
+ 10551 strings out of 493488
+ 202081 string characters out of 3141326
+ 242052 words of memory out of 3000000
+ 13571 multiletter control sequences out of 15000+200000
+ 13888 words of font info for 53 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,6n,55p,428b,199s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2012/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr17.pfb>
-Output written on ML_Final_Report.pdf (1 page, 41478 bytes).
+ 56i,9n,55p,948b,288s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
+sr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
+ocal/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loc
+al/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local
+/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/te
+xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
+ve/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/
+2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
+012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on ML_Final_Report.pdf (10 pages, 1257686 bytes).
 PDF statistics:
- 27 PDF objects out of 1000 (max. 8388607)
- 19 compressed objects within 1 object stream
+ 108 PDF objects out of 1000 (max. 8388607)
+ 67 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 58 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,36 @@
+\subsection{Task Definition}
+	Through our project, which was one of the Kaggle Projects assigned, we aimed to calculate classification probabilities for incoming tweets into 24 labels. These 24 labels came from 3 main categories:
+
+\begin{itemize}
+\item Sentiment = \{Can’t tell, Positive, Neutral, Negative, Unrelated to weather\}
+\item When = \{Current, Future, Can’t tell, Past\}
+\item Kind = \{Clouds, Cold, Dry, Hot, Humid, Hurricane, Can’t tell, Ice, Other, Rain, Snow, Storms, Sun, Tornado, Wind\}
+\end{itemize}
+
+	Our task was to take an incoming tweet and classify it to produce a vector of 24 confidence scores: one for each label. This confidence score indicated a level of confidence for that particular tweet to have significant information about that particular label. The categories of Sentiment and When could only have one classification with a positive confidence score (as for instance, a weather related event cannot happen in the past as well as in the future), but there could be multiple positive confidence scores for labels in the Kind category (it can be ``cloudy'' as well as ``rainy'' at the same time). Our training set contained tweets, locations, and a confidence score for each of the 24 possible labels. 
+
+	For each tweet, we would like to have definitive ``sentiment'', ``when'', and ``kind'' values 
+
+\subsection{Algorithm}
+	Given our input training sets (Kaggle and Cheng-Caverlee-Lee) and constraints, we decided to use a set of algorithms that we felt would best classify our data. The categories of Sentiment and When were discriminative in nature and therefore merited the use of discriminative algorithms, whereas the Kind category was generative (requiring a real-valued number representing a ``score'' of how likely that kind of weather was, given the tweet. A single tweet could thus have multiple kinds of weather at once. Thus the algorithms we ended up using were:
+
+\begin{enumerate}
+\item Support Vector Machine
+
+We converted our input dataset to the Svmlight format and used Professor Joachims’s Svmlight module to learn and classify each of the 24 separate labels as binary classifiers. We then took the max of the resulting margins within the categories to single out the “best” labels.
+
+\item Decision Tree
+
+We used the TDIDT ID3 algorithm to build Decision Tree classifiers for each of the 24 labels, with splitting criteria $\ge 1$ and $\ge 0$. We then took the max of the resulting classifications to similarly decide on the “best” labels.
+
+\item Naïve Bayes
+
+We used independent class conditional probabilities of each significant word (or combination of words) in the tweet, and used that to calculate the probability of a label being assigned to a tweet.
+
+\item Markov Random Field
+
+	As an effort to make Naive Bayes less ``naive'', we introduced conditional dependencies (based on the location and timestamp of a tweet) to classify incoming test tweets better. This was based on the assumption that tweets in nearby locations and within the same intervals of time, would have some level of similarity when it comes to the kind of weather they would be talking about. Therefore, our MRF classifier made the use of these dependencies to classify incoming tweets based on previous tweets, weighing ``similar'' tweets greater than ``dissimilar'' ones when making a classification.
+\end{enumerate}
+
+	Each of these algorithms, along with the constraints we put on them, are explained in more detail further sections.
+
