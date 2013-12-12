@@ -6,14 +6,14 @@ import numpy as np
 #import pandas as pd
 import cPickle as pickle
 
-filenum = '1'
+filenum = '6'
 #elemkind = 27
 
 infile1 = open('Important_Word_Output/kindWords'+filenum, 'r') 
 line = infile1.readline().strip()
 whenwords = line.split(", ")
 
-infile2 = open('trainingSetTweetsV2')
+infile2 = open('MRF_Train')
 alltraindata = [line.strip() for line in infile2]
 
 when_dict = {}
@@ -42,15 +42,22 @@ for k in range(len(alltraindata)):
     #if whenkind >= 0.7:
     #	classkind = 1
     #else: classkind = 0
-    tweet = trainvaluelist[1]
+    tweet = trainvaluelist[2]
     vec = np.array(buildFeatureVector(tweet))
     #s.append((vec,classkind))
     s.append(vec)
     zeroDict()
 
-#pickle.dump(s, open("Brennan/kind"+filenum+".p", "wb")) ######################
-##pickle.dump(when_dict.keys(), open("Brennan/kind_dict_words"+filenum+".p", "wb")) ######################
+#pickle.dump(s, open("Brennan4/kind"+filenum+".p", "wb")) ######################
+#pickle.dump(when_dict.keys(), open("Brennan4/kind_dict_words"+filenum+".p", "wb")) ######################
 
+print len(alltraindata)
+print trainvaluelist
+print tweet
+print vec
+
+print len(whenwords)
+print when_dict.keys()
 
 infile1.close()
 infile2.close()
