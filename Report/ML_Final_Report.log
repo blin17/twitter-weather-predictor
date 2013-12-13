@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  11 DEC 2013 19:53
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  11 DEC 2013 23:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -96,14 +96,22 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
+(/usr/local/texlive/2012/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count88
+\float@exts=\toks22
+\float@box=\box26
+\@float@everytoks=\toks23
+\@floatcapt=\box27
+)
 (/usr/local/texlive/2012/texmf-dist/tex/latex/preprint/fullpage.sty
 Package: fullpage 1999/02/23 1.1 (PWD)
 \FP@margin=\skip46
 )
 (/usr/local/texlive/2012/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks22
-\verbatim@line=\toks23
+\every@verbatim=\toks24
+\verbatim@line=\toks25
 \verbatim@in@stream=\read1
 )
 (/usr/local/texlive/2012/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
@@ -111,10 +119,10 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 (/usr/local/texlive/2012/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
 x
-\pgfutil@everybye=\toks24
+\pgfutil@everybye=\toks26
 )
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box26
+\pgfutil@abb=\box28
 (/usr/local/texlive/2012/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
@@ -127,12 +135,12 @@ Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks25
-\pgfkeys@temptoks=\toks26
+\pgfkeys@pathtoks=\toks27
+\pgfkeys@temptoks=\toks28
 
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
 ode.tex
-\pgfkeys@tmptoks=\toks27
+\pgfkeys@tmptoks=\toks29
 ))
 \pgf@x=\dimen105
 \pgf@y=\dimen106
@@ -144,10 +152,10 @@ ode.tex
 \pgf@yc=\dimen112
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count88
-\c@pgf@countb=\count89
-\c@pgf@countc=\count90
-\c@pgf@countd=\count91
+\c@pgf@counta=\count89
+\c@pgf@countb=\count90
+\c@pgf@countc=\count91
+\c@pgf@countd=\count92
 
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
@@ -165,8 +173,8 @@ File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
 code.tex
 File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
-\pgfsyssoftpath@smallbuffer@items=\count92
-\pgfsyssoftpath@bigbuffer@items=\count93
+\pgfsyssoftpath@smallbuffer@items=\count93
+\pgfsyssoftpath@bigbuffer@items=\count94
 )
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
 code.tex
@@ -196,11 +204,11 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen113
-\pgfmath@count=\count94
-\pgfmath@box=\box27
-\pgfmath@toks=\toks28
-\pgfmath@stack@operand=\toks29
-\pgfmath@stack@operation=\toks30
+\pgfmath@count=\count95
+\pgfmath@box=\box29
+\pgfmath@toks=\toks30
+\pgfmath@stack@operand=\toks31
+\pgfmath@stack@operation=\toks32
 )
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
 tex
@@ -219,7 +227,7 @@ code.tex)
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
 code.tex)))
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count95
+\c@pgfmathroundto@lastzeros=\count96
 ))
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
 de.tex
@@ -254,10 +262,10 @@ File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
 de.tex
 File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
-\pgfpic=\box28
-\pgf@hbox=\box29
-\pgf@layerbox@main=\box30
-\pgf@picture@serial@count=\count96
+\pgfpic=\box30
+\pgf@hbox=\box31
+\pgf@layerbox@main=\box32
+\pgf@picture@serial@count=\count97
 )
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
 ate.code.tex
@@ -291,7 +299,7 @@ File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
 e.tex
 File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
 \pgf@max=\dimen136
-\pgf@sys@shading@range@num=\count97
+\pgf@sys@shading@range@num=\count98
 )
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
 e.tex
@@ -300,7 +308,7 @@ File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
 code.tex
 File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
-\pgfexternal@startupbox=\box31
+\pgfexternal@startupbox=\box33
 ))
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
 de.tex
@@ -317,7 +325,7 @@ File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
 e.tex
 File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
-\pgfnodeparttextbox=\box32
+\pgfnodeparttextbox=\box34
 )
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
 tex
@@ -340,8 +348,8 @@ Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
 Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
 \pgffor@iter=\dimen139
 \pgffor@skip=\dimen140
-\pgffor@stack=\toks31
-\pgffor@toks=\toks32
+\pgffor@stack=\toks33
+\pgffor@toks=\toks34
 ))
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
 e.tex
@@ -350,7 +358,7 @@ Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
 dlers.code.tex
 File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
-\pgf@plot@mark@count=\count98
+\pgf@plot@mark@count=\count99
 \pgfplotmarksize=\dimen141
 )
 \tikz@lastx=\dimen142
@@ -359,21 +367,21 @@ File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
 \tikz@lastysaved=\dimen145
 \tikzleveldistance=\dimen146
 \tikzsiblingdistance=\dimen147
-\tikz@figbox=\box33
-\tikz@tempbox=\box34
-\tikztreelevel=\count99
-\tikznumberofchildren=\count100
-\tikznumberofcurrentchild=\count101
-\tikz@fig@count=\count102
+\tikz@figbox=\box35
+\tikz@tempbox=\box36
+\tikztreelevel=\count100
+\tikznumberofchildren=\count101
+\tikznumberofcurrentchild=\count102
+\tikz@fig@count=\count103
 
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
 e.tex
 File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
-\pgfmatrixcurrentrow=\count103
-\pgfmatrixcurrentcolumn=\count104
-\pgf@matrix@numberofcolumns=\count105
+\pgfmatrixcurrentrow=\count104
+\pgfmatrixcurrentcolumn=\count105
+\pgf@matrix@numberofcolumns=\count106
 )
-\tikz@expandcount=\count106
+\tikz@expandcount=\count107
 
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarytopaths.code.tex
@@ -388,37 +396,37 @@ code.tex
 File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
 \arrowsize=\dimen148
 ))
-\c@theorem=\count107
-\c@lemma=\count108
+\c@theorem=\count108
+\c@lemma=\count109
  (./ML_Final_Report.aux)
 \openout1 = `ML_Final_Report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 
 (/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count109
+\scratchcounter=\count110
 \scratchdimen=\dimen149
-\scratchbox=\box35
-\nofMPsegments=\count110
-\nofMParguments=\count111
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count112
+\scratchbox=\box37
+\nofMPsegments=\count111
+\nofMParguments=\count112
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count113
 \MPscratchDim=\dimen150
-\MPnumerator=\count113
-\makeMPintoPDFobject=\count114
-\everyMPtoPDFconversion=\toks34
+\MPnumerator=\count114
+\makeMPintoPDFobject=\count115
+\everyMPtoPDFconversion=\toks36
 ) (/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -468,12 +476,12 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+msa on input line 18.
+LaTeX Font Info:    Try loading font information for U+msa on input line 19.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 18.
+LaTeX Font Info:    Try loading font information for U+msb on input line 19.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -485,14 +493,33 @@ LaTeX Warning: No \author given.
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ì in font cmr10!
-) (./ProblemDef.tex
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 5.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 4.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 5.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 4.
+)
+(./ProblemDef.tex
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
@@ -507,6 +534,41 @@ Missing character: There is no ô in font cmr10!
 {/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no Ø in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
@@ -522,103 +584,171 @@ Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
 Missing character: There is no √ in font cmr10!
 Missing character: There is no Ø in font cmr10!
-) (./Data.tex [2]
-<wordclouds/31sentiment.png, id=18, 1251.67625pt x 615.29875pt>
+ [2]) (./Data.tex
+<wordclouds/31sentiment.png, id=17, 1251.67625pt x 615.29875pt>
 File: wordclouds/31sentiment.png Graphic file (type png)
 
 <use wordclouds/31sentiment.png>
 Package pdftex.def Info: wordclouds/31sentiment.png used on input line 15.
 (pdftex.def)             Requested size: 226.48395pt x 111.33109pt.
 
-<wordclouds/31when.png, id=19, 1252.68pt x 617.30624pt>
+<wordclouds/31when.png, id=18, 1252.68pt x 617.30624pt>
 File: wordclouds/31when.png Graphic file (type png)
 
 <use wordclouds/31when.png>
 Package pdftex.def Info: wordclouds/31when.png used on input line 19.
 (pdftex.def)             Requested size: 226.48395pt x 111.60013pt.
 
-<wordclouds/50kindwords.png, id=20, 1278.7775pt x 637.38126pt>
+<wordclouds/50kindwords.png, id=19, 1278.7775pt x 637.38126pt>
 File: wordclouds/50kindwords.png Graphic file (type png)
 
 <use wordclouds/50kindwords.png>
 Package pdftex.def Info: wordclouds/50kindwords.png used on input line 26.
 (pdftex.def)             Requested size: 226.48395pt x 112.88553pt.
- [3 <./wordclouds/31sentiment.png> <./wordclouds/31when.png> <./wordclouds/50ki
-ndwords.png>]) (./Decision_Trees.tex
+) [3] (./Decision_Trees.tex
 Missing character: There is no √ in font cmr10!
 Missing character: There is no Ø in font cmr10!
-)
-(./SVM.tex) (./NaiveBayes.tex) (./AdvancedMethods.tex [4]) [5] (./Results.tex
-<results/svmWhen.png, id=37, 444.7014pt x 345.9324pt>
-File: results/svmWhen.png Graphic file (type png)
+) (./SVM.tex
+Missing character: There is no √ in font cmr10!
+Missing character: There is no Ø in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
 
-<use results/svmWhen.png>
-Package pdftex.def Info: results/svmWhen.png used on input line 5.
-(pdftex.def)             Requested size: 203.83417pt x 158.56602pt.
-File: results/svmWhen.png Graphic file (type png)
- <use results/svmWhen.png>
-Package pdftex.def Info: results/svmWhen.png used on input line 9.
-(pdftex.def)             Requested size: 203.83417pt x 158.56602pt.
-File: results/svmWhen.png Graphic file (type png)
- <use results/svmWhen.png>
-Package pdftex.def Info: results/svmWhen.png used on input line 16.
-(pdftex.def)             Requested size: 203.83417pt x 158.56602pt.
-
-<results/svmCValue.png, id=39, 489.9906pt x 361.8318pt>
-File: results/svmCValue.png Graphic file (type png)
-
-<use results/svmCValue.png>
-Package pdftex.def Info: results/svmCValue.png used on input line 25.
-(pdftex.def)             Requested size: 339.72592pt x 250.87885pt.
-
-<results/bayes.png, id=40, 989.6172pt x 402.7848pt>
-File: results/bayes.png Graphic file (type png)
- <use results/bayes.png>
-Package pdftex.def Info: results/bayes.png used on input line 34.
-(pdftex.def)             Requested size: 339.72592pt x 138.27255pt.
-
-<results/decision.png, id=41, 453.8556pt x 380.1402pt>
+[4 <./wordclouds/31sentiment.png> <./wordclouds/31when.png> <./wordclouds/50kin
+dwords.png>]) (./NaiveBayes.tex) (./AdvancedMethods.tex [5]) (./Results.tex
+[6] <results/decision.png, id=40, 453.8556pt x 380.1402pt>
 File: results/decision.png Graphic file (type png)
 
 <use results/decision.png>
-Package pdftex.def Info: results/decision.png used on input line 44.
-(pdftex.def)             Requested size: 339.72592pt x 284.55339pt.
+Package pdftex.def Info: results/decision.png used on input line 18.
+(pdftex.def)             Requested size: 294.42636pt x 246.60675pt.
+ [7 <./results/decision.png>]
+Missing character: There is no √ in font cmr10!
+Missing character: There is no Ø in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
 
-<results/comparison.png, id=42, 684.156pt x 466.3824pt>
+<results/svmSentiment.png, id=47, 707.64375pt x 462.72874pt>
+File: results/svmSentiment.png Graphic file (type png)
+
+<use results/svmSentiment.png>
+Package pdftex.def Info: results/svmSentiment.png used on input line 41.
+(pdftex.def)             Requested size: 203.83417pt x 133.28413pt.
+
+<results/svmWhen.png, id=48, 444.7014pt x 345.9324pt>
+File: results/svmWhen.png Graphic file (type png)
+
+<use results/svmWhen.png>
+Package pdftex.def Info: results/svmWhen.png used on input line 45.
+(pdftex.def)             Requested size: 203.83417pt x 158.56602pt.
+
+<results/svmKind.png, id=49, 1004.75375pt x 474.77374pt>
+File: results/svmKind.png Graphic file (type png)
+
+<use results/svmKind.png>
+Package pdftex.def Info: results/svmKind.png used on input line 49.
+(pdftex.def)             Requested size: 339.72592pt x 160.52986pt.
+ [8]
+<results/svmCValue.png, id=53, 489.9906pt x 361.8318pt>
+File: results/svmCValue.png Graphic file (type png)
+
+<use results/svmCValue.png>
+Package pdftex.def Info: results/svmCValue.png used on input line 61.
+(pdftex.def)             Requested size: 203.83417pt x 150.52179pt.
+ [9 <./results/svmSentiment.png> <./results/svmWhen.png> <./results/svmKind.png
+>]
+<results/bayes.png, id=60, 989.6172pt x 402.7848pt>
+File: results/bayes.png Graphic file (type png)
+ <use results/bayes.png>
+Package pdftex.def Info: results/bayes.png used on input line 80.
+(pdftex.def)             Requested size: 339.72592pt x 138.27255pt.
+)
+(./Discussion.tex [10 <./results/svmCValue.png> <./results/bayes.png>]
+Overfull \hbox (0.37999pt too wide) in paragraph at lines 9--10
+[]\OT1/cmr/m/n/10.95 All three al-go-rithms did nearly-equally well at clas-si-
+fy-ing ``when''. Nor-mally, high-percentage
+ []
+
+<results/comparison.png, id=66, 684.156pt x 466.3824pt>
 File: results/comparison.png Graphic file (type png)
 
 <use results/comparison.png>
-Package pdftex.def Info: results/comparison.png used on input line 53.
+Package pdftex.def Info: results/comparison.png used on input line 19.
 (pdftex.def)             Requested size: 339.72592pt x 231.59654pt.
-) (./Discussion.tex) (./RelatedWork.tex [6 <./results/svmWhen.png>] [7 <./resul
-ts/svmCValue.png> <./results/bayes.png>]) [8 <./results/decision.png> <./result
-s/comparison.png>] (./FutureWork.tex)
-(./Conclusion.tex <results/heatmap.png, id=58, 738.1176pt x 496.254pt>
+ [11]) (./RelatedWork.tex [12 <./results/comparison.png>]) (./FutureWork.tex) (
+./Conclusion.tex
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no Ø in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no Ø in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+ [13]
+<results/heatmap.png, id=79, 738.1176pt x 496.254pt>
 File: results/heatmap.png Graphic file (type png)
-
-<use results/heatmap.png>
-Package pdftex.def Info: results/heatmap.png used on input line 11.
+ <use results/heatmap.png>
+Package pdftex.def Info: results/heatmap.png used on input line 20.
 (pdftex.def)             Requested size: 339.72592pt x 228.40833pt.
-) (./Appendix.tex) (./Conclusion.tex
-File: results/heatmap.png Graphic file (type png)
-
-<use results/heatmap.png>
-Package pdftex.def Info: results/heatmap.png used on input line 11.
-(pdftex.def)             Requested size: 339.72592pt x 228.40833pt.
-) [9 <./results/heatmap.png>] [10]
-(./ML_Final_Report.aux)
+) (./Appendix.tex
+Missing character: There is no ¬ in font cmtt10!
+Missing character: There is no ≠ in font cmtt10!
+Missing character: There is no ¬ in font cmtt10!
+Missing character: There is no ≠ in font cmtt10!
+) [14 <./results/heatmap.png>] (./ML_Final_Report.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 10551 strings out of 493488
- 202081 string characters out of 3141326
- 242052 words of memory out of 3000000
- 13571 multiletter control sequences out of 15000+200000
- 13888 words of font info for 53 fonts, out of 3000000 for 9000
+ 10621 strings out of 493488
+ 203103 string characters out of 3141326
+ 243373 words of memory out of 3000000
+ 13636 multiletter control sequences out of 15000+200000
+ 14056 words of font info for 54 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,9n,55p,948b,288s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,9n,55p,1515b,290s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -631,11 +761,13 @@ al/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local
 xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
 ve/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/
 2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
-012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on ML_Final_Report.pdf (10 pages, 1257686 bytes).
+012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/201
+2/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2012
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on ML_Final_Report.pdf (14 pages, 1577309 bytes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
+ 133 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 68 words of extra memory for PDF output out of 10000 (max. 10000000)
 

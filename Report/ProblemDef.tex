@@ -1,18 +1,20 @@
 \subsection{Task Definition}
-	Through our project, which was one of the Kaggle Projects assigned, we aimed to calculate classification probabilities for incoming tweets into 24 labels. These 24 labels came from 3 main categories:
-
+	The problem definition was derived from a Kaggle competition, which we slightly modified to focus on the aspects of the problem that we found most interesting. The formal definition of our learning task is to classify a tweets “sentiment” regarding the weather, the time frame a tweet is referring to (called “when” of a tweet) and the “kind” of weather the user is tweeting about. These three main categories each have their own labels, which are stated below:     
+ 
 \begin{itemize}
 \item Sentiment = \{Can’t tell, Positive, Neutral, Negative, Unrelated to weather\}
 \item When = \{Current, Future, Can’t tell, Past\}
 \item Kind = \{Clouds, Cold, Dry, Hot, Humid, Hurricane, Can’t tell, Ice, Other, Rain, Snow, Storms, Sun, Tornado, Wind\}
 \end{itemize}
+ 
+	A tweet is given one label for the “sentiment” and “when” categories, however a tweet can be given multiple labels for the “kind” category. For example, the kind category of a tweet can be given the labels dry, hot, and humid.
 
-	Our task was to take an incoming tweet and classify it to produce a vector of 24 confidence scores: one for each label. This confidence score indicated a level of confidence for that particular tweet to have significant information about that particular label. The categories of Sentiment and When could only have one classification with a positive confidence score (as for instance, a weather related event cannot happen in the past as well as in the future), but there could be multiple positive confidence scores for labels in the Kind category (it can be ``cloudy'' as well as ``rainy'' at the same time). Our training set contained tweets, locations, and a confidence score for each of the 24 possible labels. 
+	In the original problem the classification labels were given as confidence scores. However, we decided that it would be better to work with binary attributes. Thus we translated all the confidence scores into either zero or one. To do this we decided that if an attributes confidence scores is greater than or equal to 0.7 then it is labeled as “positive”, and if it is less than 0.3 then it is labeled as “negative.” By doing this we were better able to measure the performance of our learning algorithms.
 
-	For each tweet, we would like to have definitive ``sentiment'', ``when'', and ``kind'' values 
+	The data set given by Kaggle contained approximately 90,000 tweets. We used three quarters of this data for training and one quarter of it for testing. However, for building the Markov Random Field classifier we used a different data set. Since the MRF algorithm makes use of location and timestamp information to introduce conditional – dependencies to the Naïve Bayes algorithm, we had to look for a dataset that gave us that information. We were able to find such a training set in the Cheng-Caverlee-Lee dataset provided to us by Igor [1]. This dataset also included timestamp and locations along with the tweets, though without the classifications for each of the 24 labels.
 
 \subsection{Algorithm}
-	Given our input training sets (Kaggle and Cheng-Caverlee-Lee) and constraints, we decided to use a set of algorithms that we felt would best classify our data. The categories of Sentiment and When were discriminative in nature and therefore merited the use of discriminative algorithms, whereas the Kind category was generative (requiring a real-valued number representing a ``score'' of how likely that kind of weather was, given the tweet. A single tweet could thus have multiple kinds of weather at once. Thus the algorithms we ended up using were:
+	Given our input training sets (Kaggle and Cheng-Caverlee-Lee) and constraints, we decided to use a set of algorithms that we felt would best classify our data:
 
 \begin{enumerate}
 \item Support Vector Machine
@@ -32,5 +34,5 @@ We used independent class conditional probabilities of each significant word (or
 	As an effort to make Naive Bayes less ``naive'', we introduced conditional dependencies (based on the location and timestamp of a tweet) to classify incoming test tweets better. This was based on the assumption that tweets in nearby locations and within the same intervals of time, would have some level of similarity when it comes to the kind of weather they would be talking about. Therefore, our MRF classifier made the use of these dependencies to classify incoming tweets based on previous tweets, weighing ``similar'' tweets greater than ``dissimilar'' ones when making a classification.
 \end{enumerate}
 
-	Each of these algorithms, along with the constraints we put on them, are explained in more detail further sections.
+	Each of these algorithms, along with the constraints we put on them, are explained in more detail in further sections.
 
