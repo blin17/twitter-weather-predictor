@@ -1,6 +1,9 @@
 Twitter_Weather_Predictor
 =========================
 
+Using weather related tweets, we are attempting to generate the sentiment, time frame, and weather that the tweet is talking about. We use Naive Bayes, Support Vector Machines, and id3 Decision Trees to find out which algorithm accurately predict labels for tweets.
+
+
 Partly Sunny with a Chance of Hashtags
 http://www.kaggle.com/c/crowdflower-weather-twitter
 
