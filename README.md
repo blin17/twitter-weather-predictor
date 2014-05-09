@@ -16,11 +16,11 @@ id, tweet, state, location, s1, s2, ...., k15
 
 Sample data: "1","Jazz for a Rainy Afternoon:  {link}","oklahoma","Oklahoma","0","0","1","0","0","0.8","0","0.2","0","0","0","0","0","0","0","0","0","0","1","0","0","0","0","0"
 
-*s1,"I can't tell"
-*s2,"Negative"
-*s3,"Neutral / author is just sharing information"
-*s4,"Positive"
-*s5,"Tweet not related to weather condition"
+* s1,"I can't tell"
+* s2,"Negative"
+* s3,"Neutral / author is just sharing information"
+* s4,"Positive"
+* s5,"Tweet not related to weather condition"
 
 *w1,"current (same day) weather"
 *w2,"future (forecast)"
